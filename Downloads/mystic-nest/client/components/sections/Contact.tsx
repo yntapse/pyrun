@@ -46,7 +46,7 @@ export default function Contact() {
       id="contact"
       className="scroll-mt-24 py-16 md:py-24 bg-gradient-to-b from-white to-gray-50"
     >
-      <div className="container grid gap-12 md:grid-cols-2 items-start">
+      <div className="container grid gap-8 lg:grid-cols-3 items-start">
         <Reveal>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -124,9 +124,24 @@ export default function Contact() {
                 <a href="tel:+918180907138" className="text-lg font-semibold text-blue-600 hover:underline">+91 8180907138</a>
               </div>
               <div>
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Location</p>
-                <p className="text-gray-700 font-medium">Nashik, India</p>
-                <p className="text-sm text-gray-600 mt-1">Serving global enterprises</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Our Offices</p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-gray-700 font-medium">🇮🇳 India</p>
+                    <p className="text-sm text-gray-600">Nashik, Maharashtra</p>
+                    <div className="border-b border-gray-200 mt-3"></div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700 font-medium">🇺🇸 USA</p>
+                    <p className="text-sm text-gray-600">Manhattan, New York</p>
+                    <div className="border-b border-gray-200 mt-3"></div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700 font-medium">🇮🇪 Ireland</p>
+                    <p className="text-sm text-gray-600">Dublin</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 mt-4">Serving global enterprises</p>
               </div>
               <div className="border-t border-gray-200 pt-6">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Connect</p>
@@ -135,6 +150,28 @@ export default function Contact() {
             </div>
             <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
               <p className="text-sm text-blue-900"><span className="font-semibold">Response time:</span> Within 24 hours</p>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="bg-white rounded-lg border border-gray-200 p-8 sticky top-24">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Location</h3>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119994.89308641857!2d73.68777044999999!3d20.0110624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb96ebd97b1f%3A0x933b62096f6187c8!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Nashik Location"
+              ></iframe>
+            </div>
+            <div className="mt-4">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold text-gray-700">Headquarters:</span> Nashik, Maharashtra, India
+              </p>
             </div>
           </div>
         </Reveal>

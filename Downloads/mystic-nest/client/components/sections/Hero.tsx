@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/ux/Reveal";
+import ConsultationModal from "@/components/ux/ConsultationModal";
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -17,6 +18,7 @@ export default function Hero() {
   const [isHovering, setIsHovering] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   const goToPrevious = () => {
     if (isTransitioning) return;
@@ -171,10 +173,10 @@ export default function Hero() {
           <Reveal delay={0.55}>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
-                asChild
+                onClick={() => setIsConsultationModalOpen(true)}
                 className="bg-emerald-500 text-white hover:bg-emerald-600 px-8 py-3 h-auto text-base font-semibold rounded-lg transition-colors"
               >
-                <a href="#contact">See Product Demo</a>
+                Schedule Free Consultation
               </Button>
               <Button
                 asChild
@@ -193,6 +195,12 @@ export default function Hero() {
           </Reveal>
         </div>
       </div>
+
+      {/* Consultation Modal */}
+      <ConsultationModal 
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
     </motion.section>
   );
 }

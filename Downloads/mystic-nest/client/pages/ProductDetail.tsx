@@ -71,9 +71,9 @@ const productData: Record<string, ProductInfo> = {
     images: {
       main: "https://images.unsplash.com/photo-1677442d019cecf8f7b84b87e90e3305d9ae5e8e?w=800&h=600&fit=crop",
       gallery: [
-        "https://images.unsplash.com/photo-1677442d019cecf8f7b84b87e90e3305d9ae5e8e?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&h=300&fit=crop",
+        "/images/sample2.png",
+        "/images/aiproject2.jpeg",
+        "/images/langtool.png",
       ],
     },
     video: "/videos/aiml.mp4",
@@ -125,9 +125,9 @@ const productData: Record<string, ProductInfo> = {
     images: {
       main: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       gallery: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=400&h=300&fit=crop",
+        "/images/dataan1.jpeg",
+        "/images/dataaan2.jpeg",
+        "/images/daaa3.jpeg",
       ],
     },
     video: "/videos/aiml.mp4",
@@ -230,9 +230,9 @@ const productData: Record<string, ProductInfo> = {
     images: {
       main: "https://images.unsplash.com/photo-1612900895297-1d34f4d2d55f?w=800&h=600&fit=crop",
       gallery: [
-        "https://images.unsplash.com/photo-1612900895297-1d34f4d2d55f?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=400&h=300&fit=crop",
+        "/images/powerbi1.png",
+        "/images/powerbi2.jpeg",
+        "/images/powerbi3.jpeg",
       ],
     },
     video: "/videos/aiml.mp4",
@@ -454,6 +454,126 @@ export default function ProductDetail() {
                     alt={`Gallery ${i + 1}`}
                     className="w-full h-64 object-cover"
                   />
+                  {i === 0 && product.slug === "ai-ml" && (
+                    <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                      <a
+                        href="https://websitetrafficprediction-gniaputvpj5nrgwpp23xio.streamlit.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-700 font-semibold underline hover:text-blue-900"
+                      >
+                        AI-Powered Traffic & Conversion Prediction Tool
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        An AI-enabled system that analyzes traffic metrics, applies regression models, and forecasts user conversion behavior to support smarter digital decision-making.
+                      </p>
+                    </div>
+                  )}
+                  {i === 1 && product.slug === "ai-ml" && (
+                    <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                      <h3 className="text-blue-700 font-semibold">
+                        Advanced Deepfake Image Identification Tool
+                      </h3>
+                      <p className="text-gray-700 text-sm mt-2">
+                        Our Deepfake Detection Tool analyzes uploaded images and identifies signs of tampering using machine learning and facial artifact analysis, ensuring trust and security in digital content.
+                      </p>
+                    </div>
+                  )}
+                  {i === 2 && product.slug === "ai-ml" && (
+                    <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                      <h3 className="text-blue-700 font-semibold">
+                        Smart Language Translation Tool
+                      </h3>
+                      <p className="text-gray-700 text-sm mt-2">
+                        A smart language translation tool powered by advanced NLP (Natural Language Processing) that automatically understands, interprets, and translates text across multiple languages with high accuracy. It analyzes context, tone, and meaning rather than just words, ensuring natural and human-like translations. Ideal for global communication, content localization, chatbots, and real-time multilingual support.
+                      </p>
+                    </div>
+                  )}
+                  {i === 0 && product.slug === "data-analytics" && (
+                    <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                      <a
+                        href="https://datasciencejobsalariesanalysis-fyxptxm8gnktwajw6x2yvq.streamlit.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-700 font-semibold underline hover:text-purple-900"
+                      >
+                        Data Science Job Salaries – Insights & Analytics Dashboard
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        Using advanced coding and visualization techniques, this project analyzes 37,000+ salary records to highlight salary differences by role, experience level, company size, and employment type.
+                      </p>
+                    </div>
+                  )}
+                  {i === 1 && product.slug === "data-analytics" && (
+                    <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                      <a
+                        href="/images/Stock_analysis_hw.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-700 font-semibold underline hover:text-purple-900"
+                      >
+                        Python-Based Stock Performance Analysis of Major Banks
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        An end-to-end financial analytics project analyzing top bank stocks and presenting key KPIs: average price growth, sharpest market drop, yearly performance metrics, and return-on-investment benchmarks. Time-series visualizations reveal actionable investment insights.
+                      </p>
+                    </div>
+                  )}
+                  {i === 2 && product.slug === "data-analytics" && (
+                    <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                      <h3 className="text-purple-700 font-semibold">
+                        Supply Chain Delay & Optimization Analytics
+                      </h3>
+                      <p className="text-gray-700 text-sm mt-2">
+                        An intelligence system designed to improve supply chain efficiency by analyzing delivery timelines, route dependencies, and vendor reliability. Key KPIs like average delay time, on-time delivery rate, vendor success ratio, and logistics bottleneck frequency are evaluated to uncover hidden inefficiencies and optimize planning, procurement, and scheduling.
+                      </p>
+                    </div>
+                  )}
+                  {i === 0 && product.slug === "power-bi" && (
+                    <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                      <a
+                        href="https://app.powerbi.com/view?r=eyJrIjoiMDYwZTQyMTEtMWIzMS00NDY2LWFjMGMtZTFjNmVmZDc1YzI2IiwidCI6ImMyMTRjYThkLTA0NWUtNGFlNy1hM2M2LWQ0YzUwMDQ2NzkxMyJ9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-yellow-700 font-semibold underline hover:text-yellow-900"
+                      >
+                        Applicant Tracking System Performance Dashboard
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        A powerful recruitment analytics dashboard that provides complete visibility into the hiring process. It tracks application volume, candidate quality, recruiter output, and overall hiring efficiency, helping organizations reduce hiring delays, improve talent acquisition performance, and refine sourcing strategies.
+                      </p>
+                    </div>
+                  )}
+                  {i === 1 && product.slug === "power-bi" && (
+                    <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                      <a
+                        href="https://app.powerbi.com/view?r=eyJrIjoiOGE1MTIxMzYtZTQ1Ni00MjkwLWIwOWItYTBiNjYyY2IwMGM4IiwidCI6ImMyMTRjYThkLTA0NWUtNGFlNy1hM2M2LWQ0YzUwMDQ2NzkxMyJ9&pageName=9da571941c89c6b47031"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-yellow-700 font-semibold underline hover:text-yellow-900"
+                      >
+                        USA Real-Estate Market Analytics Dashboard
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        A visually rich dashboard designed to support real-estate investment decisions. It highlights pricing trends, market hotspots, inventory distribution, and investment-worthy regions across the USA, empowering businesses with accurate and actionable market intelligence.
+                      </p>
+                    </div>
+                  )}
+                  {i === 2 && product.slug === "power-bi" && (
+                    <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                      <a
+                        href="https://app.powerbi.com/view?r=eyJrIjoiOTVhYjMxYTAtYTE3My00NDkyLWIyYjYtMDY3Mjg4ZDdkZWRlIiwidCI6ImMyMTRjYThkLTA0NWUtNGFlNy1hM2M2LWQ0YzUwMDQ2NzkxMyJ9&embedImagePlaceholder=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-yellow-700 font-semibold underline hover:text-yellow-900"
+                      >
+                        Customer Segmentation & Spend Analysis (Credit Cards)
+                      </a>
+                      <p className="text-gray-700 text-sm mt-2">
+                        A powerful analytics dashboard that uncovers how customers use their credit cards, revealing patterns in spending behavior, delinquency risk, credit utilization, and customer profitability. Key insights include: 42% of customers showing high utilization, 18% falling into potential delinquency, and top 12% contributing nearly 60% of total revenue. This report helps businesses identify high-value customers, optimize credit strategies, and reduce default risk with actionable, data-backed insights.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -523,7 +643,7 @@ export default function ProductDetail() {
                 variant="outline"
                 className="border-white text-white hover:bg-emerald-600/20"
               >
-                <a href="/#contact">Schedule Consultation</a>
+                <a href="/#contact">Schedule Free Consultation</a>
               </Button>
             </div>
           </Reveal>
