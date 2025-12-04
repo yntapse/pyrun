@@ -13,13 +13,23 @@ export default function Contact() {
       const fd = new FormData(e.currentTarget);
       const body = Object.fromEntries(fd.entries());
 
+      // Add timeout for slow backend (Render free tier can take 50+ seconds to wake up)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
       const res = await fetch("https://pyrun-2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
+        signal: controller.signal,
       });
 
-      if (!res.ok) throw new Error("Failed to send");
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`Failed to send: ${errorText}`);
+      }
 
       const data = await res.json();
       setStatus("success");
@@ -36,7 +46,10 @@ export default function Contact() {
         previewUrl: data?.previewUrl,
       });
     } catch (err) {
-      console.error(err);
+      console.error("Form submission error:", err);
+      if (err instanceof Error && err.name === 'AbortError') {
+        console.error("Request timeout - backend is taking too long (Render free tier may be waking up)");
+      }
       setStatus("error");
     }
   };

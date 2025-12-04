@@ -43,6 +43,10 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
         day: "numeric",
       });
 
+      // Add timeout for slow backend
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
       const res = await fetch("https://pyrun-2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -52,9 +56,15 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
           message: `Consultation Request - Preferred Date: ${formattedDate} at ${selectedTime}`,
           consultationDate: `${formattedDate} at ${selectedTime}`,
         }),
+        signal: controller.signal,
       });
 
-      if (!res.ok) throw new Error("Failed to send");
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`Failed to send: ${errorText}`);
+      }
 
       setStatus("success");
       setTimeout(() => {
@@ -68,7 +78,10 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
         setStatus("idle");
       }, 2000);
     } catch (err) {
-      console.error(err);
+      console.error("Consultation form error:", err);
+      if (err instanceof Error && err.name === 'AbortError') {
+        console.error("Request timeout - backend is taking too long");
+      }
       setStatus("error");
     }
   };
