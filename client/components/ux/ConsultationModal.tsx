@@ -43,7 +43,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
         day: "numeric",
       });
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://pyrun-2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -13,7 +13,7 @@ export default function Contact() {
       const fd = new FormData(e.currentTarget);
       const body = Object.fromEntries(fd.entries());
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://pyrun-2.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
