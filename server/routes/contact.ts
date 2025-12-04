@@ -55,21 +55,23 @@ export const handleContact: RequestHandler = async (req, res) => {
     }
 
     const toAddress = process.env.CONTACT_DESTINATION_EMAIL ?? "info@pyrunai.com";
+    const fromAddress = process.env.SMTP_USER ?? "noreply@pyrunai.com";
 
-    // Send email to admin
+    // Send email to admin - use verified sender email, put user email in reply-to
     const mailOptions = {
-      from: `${name} <${email}>`,
+      from: `PyrunAi Contact Form <${fromAddress}>`,
+      replyTo: `${name} <${email}>`,
       to: toAddress,
       subject,
-      text,
-      html,
+      text: `From: ${name} (${email})\n\n${text}`,
+      html: `<p><strong>From:</strong> ${name} (${email})</p><hr/>${html}`,
     } as const;
 
     const info = await transporter.sendMail(mailOptions as any);
 
     // Send confirmation email to user
     const userMailOptions = {
-      from: toAddress,
+      from: `PyrunAi <${fromAddress}>`,
       to: email,
       subject: consultationDate 
         ? `Consultation Request Confirmed - ${consultationDate}`
