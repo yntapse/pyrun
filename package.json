@@ -12,11 +12,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "echo 'Build skipped for Railway - using tsx'",
+    "build": "echo 'Build skipped for Render - using tsx'",
     "build:full": "npm run build:client && npm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
-    "start": "npx tsx server/node-build.ts",
+    "start": "npx tsx server/render-server.ts",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc"
