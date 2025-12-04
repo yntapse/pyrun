@@ -4,7 +4,7 @@
 npm install
 
 ## Start Command  
-npx tsx server/node-build.ts
+npx tsx server/render-server.ts
 
 ## Environment Variables (Add in Render Dashboard)
 SMTP_HOST=smtp.gmail.com
