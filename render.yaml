@@ -1,0 +1,16 @@
+# Render Deployment Configuration
+
+## Build Command
+npm install
+
+## Start Command  
+npx tsx server/node-build.ts
+
+## Environment Variables (Add in Render Dashboard)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=info@pyrunai.com
+SMTP_PASS=your-gmail-app-password
+CONTACT_DESTINATION_EMAIL=info@pyrunai.com
+NODE_ENV=production
